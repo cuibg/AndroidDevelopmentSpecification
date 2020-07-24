@@ -209,12 +209,16 @@ drawable 资源名称以小写单词+下划线的方式命名，根据分辨率�
 
 名字要见名知意，不能采用拼音或者是英汉结合的方式，尽量按照以下规则来命名。
 
-Android 基本组件指 Activity 、Fragment 、Service 、BroadcastReceiver 、ContentProvider 等等
+> 这种情况就必须是中文了，比如说 alibaba，beijing 等。
+
+Android 基本组件指 Activity 、Fragment（不属于四大组件，但是属于基本经常使用的） 、Service 、BroadcastReceiver 、ContentProvider 等
 
 #### 4.1 Activity
 
 - Activity 间的数据通信，对于数据量比较大的，避免使用 Intent + Parcelable 的方式，可以考虑 EventBus 等替代方案，以免造成 TransactionTooLargeException。
+
 - Activity#onSaveInstanceState()方法不是 Activity 生命周期方法，也不保证一定会被调用。它是用来在 Activity 被意外销毁时保存 UI 状态的，只能用于保存临时性数据，例如 UI 控件的属性等，不能跟数据的持久化存储混为一谈。持久化存储应该在 Activity#onPause()/onStop()中实行。
+
 - Activity 间通过隐式 Intent 的跳转，在发出 Intent 之前必须通过 resolveActivity 检查，避免找不到合适的调用组件，造成 ActivityNotFoundException 的异常。
 
   ```
@@ -249,7 +253,9 @@ Android 基本组件指 Activity 、Fragment 、Service 、BroadcastReceiver 、
 - 如果广播仅限于应用内，则可以使用 LocalBroadcastManager#sendBroadcast()实现，避免敏感信息外泄和 Intent 拦截的风险。
 
 * 对于只用于应用内的广播，优先使用 LocalBroadcastManager 来进行注册和发送，LocalBroadcastManager 安全性更好，同时拥有更高的运行效率。
+
 * Activity 或者 Fragment 中动态注册 BroadCastReceiver 时，registerReceiver()和 unregisterReceiver()要成对出现。
+
 * Android 基础组件如果使用隐式调用，应在 AndroidManifest.xml 中使用<intent-filter> 或在代码中使用 IntentFilter 增加过滤。
 
 #### 4.4 Fragment
@@ -270,7 +276,9 @@ Android 基本组件指 Activity 、Fragment 、Service 、BroadcastReceiver 、
 1. 布局中不得不使用 ViewGroup 多重嵌套时，不要使用 LinearLayout 嵌套，改用 RelativeLayout，可以有效降低嵌套数。
 
    - Android 应用页面上任何一个 View 都需要经过 measure、layout、draw 三个步骤才能被正确的渲染
+
    - 页面拥上的 View 越多，measure、layout、draw 所花费的时间就越久。要缩短这个时间，关键是保持 View 的树形结构尽量扁平，而且要移除所有不需要渲染的 View。理想情况下，总共的 measure，layout，draw 时间应该被很好的控制在 16ms 以内
+
    - 要找到那些多余的 View（增加渲染延迟的 view），可以用 Android Studio Monitor 里的 Hierarchy Viewer 工具
 
 2. 在 Activity 中显示对话框或弹出浮层时，尽量使用 DialogFragment，而非 Dialog/AlertDialog，这样便于随 Activity 生命周期管理对话框/弹出浮层的生命周期。
@@ -288,8 +296,11 @@ Android 基本组件指 Activity 、Fragment 、Service 、BroadcastReceiver 、
 8. 在需要时刻刷新某一区域的组件时，建议通过以下方式避免引发全局 layout 刷新
 
    - 设置固定的 View 大小的宽高，如倒计时组件等；
+
    - 调用 View 的 layout 方法修改位置，如弹幕组件等；
+
    - 通过修改 Canvas 位置并且调用 invalidate(int l, int t, int r, int b)等方式限定刷新区域；
+
    - 通过设置一个是否允许 requestLayout 的变量，然后重写控件的 requestlayout、onSizeChanged 方法， 判断控件的大小没有改变的情况下， 当进入 requestLayout 的时候，直接返回而不调用 super 的 requestLayout 方法。
 
 9. 不能在 Activity 没有完全显示时显示 PopupWindow 和 Dialog.
