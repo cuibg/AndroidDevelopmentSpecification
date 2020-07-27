@@ -655,6 +655,21 @@ Android 基本组件指 Activity 、Fragment（不属于四大组件，但是属
 
 良好的代码是不需要有逻辑注释的，在代码中注释是垃圾，业务代码或者是复杂代码可以有一定的注释，具体请查看我的另外一篇文章原文地址和源码：**[代码整洁规范通用版][clean code(gitbook)]** 和 **[源码][clean code源码]**
 
+### 9 三方库推荐使用
+
+优秀的三方库推荐
+
+- **[Retrofit][retrofit]** 网络请求
+- **[OkHttp][okhttp]** 网络请求
+- **[RxAndroid][rxandroid]**
+- **[Glide][glide]**/**[Fresco][fresco]** 图片加载
+- **[Gson][gson]**/**[Fastjson][fastjson]** 数据解析
+- **[EventBus][eventbus]**/**[AndroidEventBus][androideventbus]** 事件传递
+- **[GreenDao][greendao]**/**[LitePal][litepal]** Sqlite 操作
+- **[PermissionsDispatcher][permissionsdispatcher]**/**[RxPermissions][rxpermissions]** 权限申请库
+- **[Dagger2][dagger2]**（选用）
+- **[Tinker][tinker]**（选用）
+
 ### 9 常见英文单词缩写
 
 其实我是不建议缩写的，如果不是太长建议还是不缩写单词
@@ -703,3 +718,18 @@ Android 基本组件指 Activity 、Fragment（不属于四大组件，但是属
 [android standard develop]: https://github.com/Blankj/AndroidStandardDevelop
 [package by features, not layers]: https://medium.com/hackernoon/package-by-features-not-layers-2d076df1964d#.mp782izhh
 [todo-mvp]: https://github.com/android/architecture-samples/tree/todo-mvp
+[retrofit]: https://github.com/square/retrofit
+[rxandroid]: https://github.com/ReactiveX/RxAndroid
+[okhttp]: https://github.com/square/okhttp
+[glide]: https://github.com/bumptech/glide
+[fresco]: https://github.com/facebook/fresco
+[gson]: https://github.com/google/gson
+[fastjson]: https://github.com/alibaba/fastjson
+[eventbus]: https://github.com/greenrobot/EventBus
+[androideventbus]: https://github.com/bboyfeiyu/AndroidEventBus
+[greendao]: https://github.com/greenrobot/greenDAO
+[litepal]: https://github.com/guolindev/LitePal
+[permissionsdispatcher]: https://github.com/permissions-dispatcher/PermissionsDispatcher
+[rxpermissions]: https://github.com/tbruyelle/RxPermissions
+[dagger2]: https://github.com/google/dagger
+[tinker]: https://github.com/Tencent/tinker
