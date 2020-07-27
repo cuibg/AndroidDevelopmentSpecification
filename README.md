@@ -23,6 +23,25 @@
 
 ### 3 资源文件命名
 
+资源建议采用分包的方式进行使用
+
+![分包示例][分包示例图]
+
+新增了 res_core 和 res_sub 两个资源包
+
+在 gradle 中配置
+
+```
+android {
+    ...
+    sourceSets {
+        main {
+            res.srcDirs('src/main/res', 'src/main/res_core', 'src/main/res_sub')
+        }
+    }
+}
+```
+
 #### 3.1 布局文件 layout
 
 使用举例
@@ -444,7 +463,7 @@ public class MyClass {
 
 ##### 4.5.2 Type0（控件类型）
 
-考虑到 Android 众多的 UI 控件，为避免控件和普通成员变量混淆以及更好地表达意思，所有用来表示控件的成员变量统一加上控件缩写作为前缀（具体见附录 [UI 控件缩写表](#ui-控件缩写表)）。
+考虑到 Android 众多的 UI 控件，为避免控件和普通成员变量混淆以及更好地表达意思，所有用来表示控件的成员变量统一加上控件缩写作为前缀.
 
 例如：`mIvAvatar`、`rvBooks`、`flContainer`。
 
@@ -675,6 +694,7 @@ Android 基本组件指 Activity 、Fragment（不属于四大组件，但是属
 
 [Github Android Standard Develop 项目][android standard develop]
 
+[分包示例图]: https://github.com/cuibg/AndroidDevelopmentSpecification/master/image/res_sub_constract.png
 [clean code(gitbook)]: https://cuibg.gitbooks.io/cleancode/content/
 [clean code源码]: https://github.com/cuibg/CleanCode
 [阿里巴巴 java 开发手册]: https://github.com/alibaba/p3c/blob/master/
