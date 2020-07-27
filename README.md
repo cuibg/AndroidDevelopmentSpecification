@@ -42,6 +42,8 @@ android {
 }
 ```
 
+然后同步一下就可以使用啦！！
+
 #### 3.1 布局文件 layout
 
 使用举例
@@ -694,7 +696,7 @@ Android 基本组件指 Activity 、Fragment（不属于四大组件，但是属
 
 [Github Android Standard Develop 项目][android standard develop]
 
-[分包示例图]: https://github.com/cuibg/AndroidDevelopmentSpecification/master/image/res_sub_constract.png
+[分包示例图]: https://raw.githubusercontent.com/cuibg/AndroidDevelopmentSpecification/master/image/res_sub_constract.png
 [clean code(gitbook)]: https://cuibg.gitbooks.io/cleancode/content/
 [clean code源码]: https://github.com/cuibg/CleanCode
 [阿里巴巴 java 开发手册]: https://github.com/alibaba/p3c/blob/master/
