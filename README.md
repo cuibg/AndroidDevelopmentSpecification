@@ -28,7 +28,7 @@
 
 ![分包示例][分包示例图]
 
-新增了 res_core 和 res_sub 两个资源包
+新增了 res_assess 资源包
 
 在 gradle 中配置
 
@@ -37,7 +37,7 @@ android {
     ...
     sourceSets {
         main {
-            res.srcDirs('src/main/res', 'src/main/res_core', 'src/main/res_sub')
+            res.srcDirs('src/main/res', 'src/main/res_assess')
         }
     }
 }
