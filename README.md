@@ -595,8 +595,6 @@ Android 基本组件指 Activity 、Fragment（不属于四大组件，但是属
 
 - 当 Activity 或 Fragment 启动需要传递参数时，那么它需要提供一个 public static 的函数来帮助启动或创建它。
 
-- 避免使用`Dialog`，应该使用`DialogFragment`,这样可以避免 Activity 在重建的时候，不用考虑对话框是否关闭，比如说旋转屏幕的时候。而且采用`DilogFragment`在写代码的时候能够感觉到更整洁！
-
 ### 6 代码样式规范
 
 1. 布局中不得不使用 ViewGroup 多重嵌套时，不要使用 LinearLayout 嵌套，改用 RelativeLayout，可以有效降低嵌套数。
@@ -608,6 +606,8 @@ Android 基本组件指 Activity 、Fragment（不属于四大组件，但是属
    - 要找到那些多余的 View（增加渲染延迟的 view），可以用 Android Studio Monitor 里的 Hierarchy Viewer 工具
 
 2. 在 Activity 中显示对话框或弹出浮层时，尽量使用 DialogFragment，而非 Dialog/AlertDialog，这样便于随 Activity 生命周期管理对话框/弹出浮层的生命周期。
+
+   - 避免使用`Dialog`，应该使用`DialogFragment`,这样可以避免 Activity 在重建的时候，不用考虑对话框是否关闭，比如说旋转屏幕的时候。而且采用`DilogFragment`在写代码的时候能够感觉到更整洁！
 
 3. 源文件统一采用 UTF-8 的形式进行编码。
 
