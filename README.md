@@ -169,18 +169,21 @@ drawable 资源名称以小写单词+下划线的方式命名，根据分辨率�
 2. 举例
 
    | 控件             | 缩写 |
-   | ---------------- | ---: |
-   | LinearLayout     |   ll |
-   | RelativeLayout   |   rl |
-   | ConstraintLayout |   cl |
-   | ListView         |   lv |
-   | ScollView        |   sv |
-   | TextView         |   tv |
-   | Button           |  btn |
-   | ImageView        |   iv |
-   | CheckBox         |   cb |
-   | RadioButton      |   rb |
-   | EditText         |   et |
+   | ---------------- | ---- |
+   | LinearLayout     | ll   |
+   | RelativeLayout   | rl   |
+   | ConstraintLayout | cl   |
+   | ListView         | lv   |
+   | ScollView        | sv   |
+   | NestScrollView   | nsv  |
+   | TextView         | tv   |
+   | Button           | btn  |
+   | ImageView        | iv   |
+   | ImageButton      | ib   |
+   | CheckBox         | cb   |
+   | RadioButton      | rb   |
+   | EditText         | et   |
+   | MotionLayout     | ml   |
 
 3. 其它控件的缩写推荐使用小写字母并用下划线进行分割，例如：ProgressBar 对应的缩写为 progress_bar；DatePicker 对应的缩写为 date_picker。
 
