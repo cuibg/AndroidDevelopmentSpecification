@@ -544,7 +544,7 @@ Android 基本组件指 Activity 、Fragment（不属于四大组件，但是属
 
 - Activity 间通过隐式 Intent 的跳转，在发出 Intent 之前必须通过 resolveActivity 检查，避免找不到合适的调用组件，造成 ActivityNotFoundException 的异常。
 
-  ```
+  ```java
   if (getPackageManager().resolveActivity(intent, PackageManager.          MATCH_DEFAULT_ONLY) != null) {
         startActivity(intent);
   }else {
@@ -612,7 +612,7 @@ Android 基本组件指 Activity 、Fragment（不属于四大组件，但是属
 
    - 避免使用`Dialog`，应该使用`DialogFragment`,这样可以避免 Activity 在重建的时候，不用考虑对话框是否关闭，比如说旋转屏幕的时候。而且采用`DilogFragment`在写代码的时候能够感觉到更整洁！
 
-3. 源文件统一采用 UTF-8 的形式进行编码。
+3. 源文件统一采用 **UTF-8** 的形式进行编码。
 
 4. 禁止在非 UI 线程进行 View 相关操作。
 
@@ -620,7 +620,7 @@ Android 基本组件指 Activity 、Fragment（不属于四大组件，但是属
 
 6. 禁止在设计布局时多次为子 View 和父 View 设置同样背景进而造成页面过度绘制，推荐将不需要显示的布局进行及时隐藏。
 
-7. 灵活使用布局，推荐 merge、ViewStub 来优化布局，尽可能多的减少 UI 布局层级，推荐使用 FrameLayout，LinearLayout、RelativeLayout 次之。
+7. 灵活使用布局，推荐 **merge、ViewStub** 来优化布局，尽可能多的减少 UI 布局层级，推荐使用 **FrameLayout，LinearLayout、RelativeLayout** 次之。
 
 8. 在需要时刻刷新某一区域的组件时，建议通过以下方式避免引发全局 layout 刷新
 
